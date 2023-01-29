@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as * ;
+@use '../abstracts/mixins' as *;
+@use '../components/dropdown' as *;
+
+
+.chat--wrapper{
+height: calc(100vh - 5.312em);
+    .chat--inner{
+        height:100% ;
+        display:grid;
+        @include prefixes(grid-template-columns,350px auto);
+
+        // ChatEnvironment
+         .chat--area{
+            position: relative;
+            overflow-y: auto;
+            background-image: url('../../../assets/images/signup-bc.jpg');
+            position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color:rgba(0, 0, 0, 0.1);
+                }
+
+         }
+    }
+}

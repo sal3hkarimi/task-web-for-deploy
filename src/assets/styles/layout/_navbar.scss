@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+
+.nav--header{
+background-color: #fff;
+box-shadow: boxShadow(shadow-sm);
+padding: 1em;
+
+    .nav--user{
+        @include prefixes(justify-content,flex-start);
+        @include prefixes(align-items,center);
+        @include prefixes(cursor,pointer);
+        @include prefixes(width,fit-content);
+        
+        display: flex;
+        border: 1px solid $purple-200;
+        padding:.5em .75em;
+        border-radius: $rounded-xsm;
+        background-color: #fff;
+
+        & > img{
+            border-radius: 50%;
+        }
+
+        .nav--username{
+            margin: 0 .75em;
+            font-size: fontSize('sm');
+            font-family: fontFamily('vazir-bold');
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+
+.sidenav{
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    @include prefixes(align-items,center);
+    @include prefixes(justify-content,center);
+
+        &--buttons{
+        display: flex;
+        @include prefixes(flex-direction,column);
+        @include prefixes(align-items,center);
+        @include prefixes(justify-content,center);
+        }
+}

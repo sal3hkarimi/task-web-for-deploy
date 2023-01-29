@@ -1,0 +1,24 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+%buttonsGroup{
+    width:100%;
+      display:flex;
+      @include prefixes(justify-content,space-between);
+      
+        li:nth-child(3n){
+            margin: 0 1em;
+        }
+
+        li{
+            & > a:link{
+                color: inherit; 
+                font-size: fontSize(sm);
+            }
+
+            &.active > a{
+                color: $purple-600;
+            }
+        }
+    }

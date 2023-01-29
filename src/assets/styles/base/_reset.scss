@@ -1,0 +1,52 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body{
+font-family: fontFamily('vazir-regular');
+font-size: fontSize('md');
+color: $purple-900;
+overflow-x:hidden;
+}
+
+
+h3{
+    font-size: fontSize('xl');
+}
+
+img{
+    @include prefixes(object-fit,cover);
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul,
+li{
+    list-style: none;
+}
+
+svg{
+    vertical-align: middle;
+}
+
+
+//<--Media queries-->
+@include respond-to('sm'){
+    body,
+    html{
+        font-size: fontSize('sm');
+    }
+}

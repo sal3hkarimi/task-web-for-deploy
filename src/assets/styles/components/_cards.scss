@@ -1,0 +1,10 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+%card{
+    background-color: #fff;
+    border-radius: $rounded-sm;
+    padding: 1em;
+    @include prefixes(box-shadow,boxShadow(shadow-sm));
+}

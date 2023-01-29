@@ -1,0 +1,22 @@
+@use 'variables'  as * ;
+@use 'functions'  as * ;
+
+//Respond to breakpoint
+@mixin respond-to($breakpoint){
+    @if map-has-key($breakpoints,$breakpoint){
+        @media screen and (max-width:map-get($breakpoints,$breakpoint)){
+            @content;
+        }
+    }
+}
+
+
+//Vender Prefixes
+@mixin prefixes($prop,$val){
+    #{$prop}: #{$val};
+    -o-#{$prop}: #{$val};
+    -ms-#{$prop}: #{$val};
+    -moz-#{$prop}: #{$val};
+    -webkit-#{$prop}:#{$val};
+}
+

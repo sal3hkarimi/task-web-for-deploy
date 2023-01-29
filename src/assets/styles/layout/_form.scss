@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+
+.form--wrapper{
+height: 100vh;
+background:url('../../images/signup-bc.jpg') no-repeat center center/cover;
+padding-top: 15em;
+    
+    .form{
+        background-color: white;
+        max-width:30em;
+        padding:2em 5em;
+        max-height:28em;
+        height: 100%;
+        border-radius: 5px;
+        width: 100%;
+        margin: 0 auto;
+        border: 1px solid $purple-200;
+        
+        &--control{
+        &--error{
+            color: $red-400;
+            &--errorIcon{
+                margin-left: .5rem;
+            }
+        }
+    }
+}
+}

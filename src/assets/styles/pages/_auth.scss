@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../components/inputs' as *;
+
+// <--Signup Form Begin-->
+    .form--signup{
+        .form--backBtn{
+            color: $gray-600;
+            font-size: fontSize('sm');
+            @include prefixes(cursor,pointer);
+            @include prefixes(transition,transition(all,'duration-250',ease-in-out));
+    
+            &:hover{
+                @include prefixes(filter,opacity(0.8))
+            }
+        }
+
+        .form--control{
+            .form--input{
+                @extend %input;
+                margin: .5rem 0;
+                width: 100%;
+            }
+        }
+    }
+// <--Signup Form End-->
+
+// <--Login Form Begin-->
+    .form--login{
+
+    }
+// <--Login Form End-->

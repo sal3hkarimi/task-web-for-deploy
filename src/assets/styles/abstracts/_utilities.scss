@@ -1,0 +1,101 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
+//<--Generate Displays Begin -->
+@each $display in $displays{
+    .d-#{$display}{
+        display:#{$display};
+    }
+}
+//<--Generate Displays End -->
+
+//<--Generate FlexDirections Begin -->
+@each $val in $f-directions{
+    .#{$val}{
+        @include prefixes(flex-direction,#{$val});
+    }
+}
+//<--Generate FlexDirections End -->
+
+//<--Generate AlignItems Begin -->
+@each $val in $f-alignItems{
+    .align-#{$val}{
+        @include prefixes(align-items,#{$val});
+    }
+}
+//<--Generate AlignItems End -->
+
+//<--Generate JustifyContents Begin -->
+@each $val in $f-justifies{
+    .justify-#{$val}{
+        @include prefixes(justify-content,#{$val});
+    }
+
+}
+//<--Generate JustifyContents End -->
+
+//<--Generate Flex(grow,shrink,basis) Begin -->
+@for $i from 1 through 5{
+    .flex-#{$i}{
+        @include prefixes(flex,$i);
+    }
+
+}
+//<--Generate Flex(grow,shrink,basis) End -->
+
+
+//<--Generate Margins/Paddings End -->
+@each $space-key,$space-val in $spaces{
+    @each $side-key,$side-val in $sides{
+        .m#{$side-key}-#{$space-key}{
+            margin-#{$side-val}: #{$space-val}rem !important;
+        }
+
+        .p#{$side-key}-#{$space-key}{
+            padding-#{$side-val}: #{$space-val}rem !important;
+        }
+
+    }
+    
+    .mx-#{$space-key}{
+        margin-left: #{$space-val}rem !important;
+        margin-right: #{$space-val}rem !important;
+    }
+
+    .my-#{$space-key}{
+        margin-top: #{$space-val}rem !important;
+        margin-bottom: #{$space-val}rem !important;
+    }
+}
+//<--Generate Margins/Paddings End -->
+
+//Backgrounds Begin
+.bg-green-400{
+    background-color: $green-400 !important;
+}
+
+.bg-red-400{
+    background-color: $red-400 !important;
+}
+
+.bg-orange-600{
+    background-color: $orange-600 !important;
+}
+
+.bg-purple-600{
+    background-color: $purple-600 !important;
+}
+
+.bg-purple-400{
+    background-color: $purple-400 !important;
+}
+//Backgrounds End
+
+.rounded-full{
+    border-radius: $rounded-full;
+}
+
+.c-pointer{
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as *; 
+
+
+%input{
+    padding: .75em;
+    border: 1px solid $purple-200;
+    border-radius: $rounded-md;
+    font-family: inherit;
+    &:focus{
+        outline: none;
+    }
+
+    &::placeholder{
+        color: $purple-500;
+    }
+}
+
+.searchField{
+    position: relative;
+    #{&}--input{
+        @extend %input;
+        margin: .5rem 0;
+        padding-right:3em;
+    }
+
+    #{&}--label{
+        top:20px;
+        right:8px;
+        color: $purple-400;
+        position: absolute;
+    }
+}

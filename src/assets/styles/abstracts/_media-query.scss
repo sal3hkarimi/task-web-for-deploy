@@ -1,0 +1,122 @@
+@use 'mixins' as *;
+@use 'functions' as *;
+@use 'variables' as *;
+
+
+//<--Small Dimension Begin -->
+@include respond-to('sm'){
+    .form--wrapper{
+        padding-left: .5em;
+        padding-right: .5em;
+        .form--authorize{
+            padding:2em;
+            width: 100%;
+        }
+    }
+}
+//<--Small Dimension End -->
+
+// <--Large Dimension Begin
+@include respond-to('lg'){
+        // Profile Page
+        .profile{
+            .left{
+                height: 100%;
+                 position: relative;
+                 @include prefixes(grid-template-columns, 0 auto);
+                @include prefixes(transition,transition(all,duration-250,ease-in-out));
+                &{
+                    .sidenav{
+                        @include prefixes(transform,translateX(100%));
+                    }
+                }
+
+                &.expand{
+                    @include prefixes(grid-template-columns,100px auto);
+
+                    .sidenav{
+                        @include prefixes(transform,translateX(0));
+                    }
+
+                }
+
+                .openSidenav{
+                    top:25px;
+                    z-index: 100;
+                    cursor: pointer;
+                    right: 0;
+                    background-color: $purple-100;
+                    padding: .5em;
+                    position: absolute;
+                    border-radius: $rounded-full;
+                }
+
+                 & > div{
+                    .content{
+                       // height: calc(100% - 25vh);
+                        padding:0 2em !important;
+                            .profile--header{
+                                .settings{
+                                    margin: 0 auto;
+                                    display: inline-block !important;
+                                    
+                                    .imgProfile--wrapper{
+                                        text-align: center;
+
+                                        label{
+                                            right:25%;
+                                        }
+                                    }
+                                }
+
+                                .buttons{
+                                    display: none !important;
+                                }
+                            }
+
+                            .profile--body{
+                                max-width: 600px !important;
+                                margin: 0 auto;
+                                .row-1,
+                                .row-2{
+                                    display: block !important;
+
+                                    & > *{
+                                        margin: 2em 0 !important;
+                                    }
+                                }
+
+                                .row-2{
+                                    margin-top: 0 !important;
+                                }
+                            }
+
+                            .mobile--buttons{
+                                display: block !important;
+                                
+                                & > *{
+                                    width: 100%;
+                                    margin: 0 !important;
+                                }
+
+                                & > *:nth-child(2){
+                                    margin-top: 2em !important;
+                                }
+                            }
+
+                            .desktop--buttons{
+                                display: none;
+                            }
+                    }
+                 }
+            }
+        }
+
+
+        // Chat Page
+        .chat--wrapper{
+            
+        }
+}
+// <--Large Dimension End
+

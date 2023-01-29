@@ -1,0 +1,159 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+@use '../components/cards' as *;
+
+.user,
+.admin,
+.leader{
+    display: grid;
+    @include prefixes(grid-template-columns,130px 1fr);
+    margin-top: 3em;
+    min-width:100em;
+    width: 100%;
+    padding: 1em 2em;
+    height: calc(100vh - 8.335em);
+    position: relative;
+
+    .sidenav{
+        background-color: $purple-100;
+        border-radius:$rounded-md;
+        margin-left: 2em;
+        border: 1px solid $purple-200;
+    }
+
+
+    & > .sidnav,
+    & > .sectionOne,
+    & > .sectionTwo {
+        background-color: $purple-100;
+        border-radius: $rounded-sm;
+        padding: 1em;
+        border: 1px solid $purple-200;
+    }
+
+    .sectionOne,
+    .sectionTwo{
+        height: 100%;
+        .cards{
+            margin-top: 1em;
+            display: grid;
+            @include prefixes(grid-template-columns,repeat(4,1fr));
+            @include prefixes(grid-gap,1em);
+
+             .card{
+                @extend %card;
+             }
+        }
+    }
+
+    .sectionOne{
+        .filterbar{
+            .filterbar--ul{
+                display:inline-flex;
+            
+                & > li{
+                    margin: 0 2em;
+                    font-size:fontSize('sm');
+                    @include prefixes(cursor,pointer);
+                }
+            }
+        
+            .filterbar--progressBar{
+                width:25em;
+                height: 6px;
+                margin-top: 1em;
+                top: 0;
+                right: 0;
+                position: relative;
+                border-radius:$rounded-half;
+                background-color: $gray-200;
+                    &::after{
+                        position: absolute;
+                        background-color: $purple-600;
+                        border-radius: inherit;
+                        content: '';
+                        width:20%;
+                        height: inherit;
+                    }
+            }
+    }
+    }
+
+
+    .sectionTwo{
+        overflow: hidden;
+        &--header{
+            .top{
+                margin-bottom: .5em;
+                display:flex;
+                @include prefixes(justify-content,space-between);
+                @include prefixes(align-items,center);
+            }
+    
+            .bottom{
+                display: flex;
+                @include prefixes(justify-content,flex-start);
+                @include prefixes(align-items,center);
+            }
+        }
+
+        .cards{
+            height:calc(100% - 7.18em);
+
+            .card--wrapper{
+                overflow-y: auto;
+                padding: .5em;
+                border-radius: $rounded-sm;
+                background-color: $purple-250;
+
+                &::-webkit-scrollbar{
+                    background-color:red;
+                    border-radius:50px;
+                }
+
+                &::-webkit-scrollbar-thumb{
+                    background-color: $purple-400;
+                    border-radius: 50px;
+                }
+
+                &::-webkit-scrollbar{
+                    width:6px;
+                }
+                
+
+                .taskcard{
+                    &--header{
+                        svg {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &--body{
+                        &:nth-child(2){
+                            .deliverDate{
+                                border: 1px solid $purple-200;
+                                border-radius: $rounded-xsm;
+                                padding: .2em;
+                            }
+                        }
+                    }
+
+
+                    &--footer{
+                        .top,
+                        .bottom{
+                            color: $purple-400;
+                        }
+
+                        .bottom > *:nth-child(1){
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+            }
+        }
+    
+    }
+}

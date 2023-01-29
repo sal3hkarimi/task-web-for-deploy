@@ -1,0 +1,130 @@
+//<--Colors begin-->
+$purple-900:#232360;
+$purple-600:#5051F9;
+$purple-550:#5F6388;
+$purple-500:#768396;
+$purple-400:#9696AD;
+$purple-250:#DDE6FF;
+$purple-200:#E8EAFF;
+$purple-100:#FBFAFF;
+$purple-300:#EAEAFF;
+
+
+$gray-600:#979797;
+$gray-200:#E2E2E2;
+
+
+$blue-300:#2F5BF8;
+
+$orange-600:#E97342;
+
+$green-400:#19BF83;
+
+$yellow-300:#FFB13B;
+
+$red-400:#F03A47;
+
+//<--Colors end-->
+
+//<--Breakpoints begin-->
+$breakpoints:(
+    "xsm":450px,
+    "sm":500px,
+    "md":768px,
+    "lg":1280px
+);
+//<--Breakpoints end-->
+
+//<--Durations begin-->
+$durations:(
+    'duration-250':250ms,
+    'duration-500':500ms
+);
+//<--Durations end-->
+
+//<--Border radius begin-->
+$rounded-xsm:5px;
+$rounded-sm:9px;
+$rounded-md:14px;
+$rounded-half:50px;
+$rounded-full:50%;
+//<--Border radius end-->
+
+//<-Spaces begin-->
+$spaces:(
+    1:'0.25',
+    2:'0.5',
+    3:'0.75',
+    4:'1',
+    5:'1.25',
+    6:'1.50',
+    7:'1.75',
+    8:'2',
+    9:'2.25',
+    10:'2.50',
+    11:'2.75',
+    12:'3',
+    13:'3.25',
+    14:'3.50',
+    15:'3.75',
+    16:'4'
+);
+//<--Spaces end-->
+
+//<--Sides end-->
+$sides:(
+    't':'top',
+    'b':'bottom',
+    'l':'left',
+    'r':'right'
+);
+//<--Sides end-->
+
+//<--Font families' names -->
+$font-families:(
+    'vazir-bold':'vazir-bold',
+    'vazir-regular':'vazir-regular'
+);
+//<--Font families' names -->
+
+//<--Font sizes-->
+$font-sizes:(
+    'xsm':0.75rem, // 12px
+    'sm':.875rem, // 14px
+    'md':1rem, // 16px
+    'lg':1.25rem, // 20px
+    'xl':1.5rem, // 24px
+    'xxl':1.8rem
+);
+//<--Font sizes -->
+
+//<--Box shadows-->
+$box-shadows:(
+    'shadow-sm':0 0 10px rgba(0,0,0,0.1),
+    'shadow-md':0 0 10px rgba(0,0,0,0.3),
+    'shadow-lg':0 0 10px rgba(0,0,0,0.5),
+    'shadow-xl':0 0 10px rgba(0,0,0,0.7),
+    'shadow-xxl':0 0 10px rgba(0,0,0,9)
+);
+//<--Box shadows -->
+
+
+//<-- Flex-directions Begin -->
+$f-directions:(row,column,row-reverse,column-reverse);
+//<-- Flex-directions End -->
+
+
+//<-- Flex-justifyContents Begin -->
+$f-justifies:(space-between,center,flex-start,flex-end);
+//<-- Flex-justifyContents End -->
+
+
+//<-- Flex-alignItems Begin -->
+$f-alignItems:(stretch,center,start,end);
+//<-- Flex-alignItems End -->
+
+//<-- Displays Begin -->
+$displays:(block,flex,inline,inline-block);
+//<-- Displays End -->
+
+

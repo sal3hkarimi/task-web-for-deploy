@@ -1,0 +1,64 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../components/buttonsGroup' as *;
+
+.chatPanel{
+    padding:0 1.5em;
+    background-color: #fff;
+    overflow-y: auto;
+        &--header{
+            text-align:center;
+        }
+
+        &--members{
+            .members{
+                background-color:$purple-200;
+                padding: 1em;
+                border-radius: $rounded-md;
+
+                & > div{
+                    border-bottom: 1px solid rgba( #9696AD, 0.1);
+                    display: flex;
+                    padding:.5em 0;
+                    @include prefixes(justify-content,flex-start);
+                    @include prefixes(align-items,center);
+
+                        &:last-child{
+                            padding: 0;
+                            border: none;
+                        }
+                }
+
+                & > div:nth-child(2n){
+                    margin: 1em 0;
+                }
+            }
+        }
+
+        .links{
+            .groupButtons--wrapper{
+                background-color: $purple-200;
+                padding: .75em;
+                border-radius: $rounded-sm;
+                text-align: center;
+                
+                .groupButtons{
+                    @extend %buttonsGroup;
+                }
+
+            }
+
+            .related-files{
+                display: grid;
+                @include prefixes(grid-gap,1em);
+                @include prefixes(grid-template-columns,repeat(3,1fr));
+
+                    & > div{
+                        img{
+                            border-radius: $rounded-md;
+                        }
+                    }
+            }
+        }
+}

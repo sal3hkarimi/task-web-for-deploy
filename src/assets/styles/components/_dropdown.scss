@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+
+
+    %dropdown--block{
+        min-width: 16.125em;
+        overflow-y: auto;
+        padding: .5em;
+        border-radius: 9px;
+        display: block;
+        position: absolute;
+        background-color: #fff;
+        z-index: 100;
+       
+        @include prefixes(box-shadow,boxShadow('shadow-sm'));
+    
+         .dropdown--item{
+            display: block;
+            padding: .75em;
+            font-size: fontSize('sm');
+            border-radius: 9px;
+            @include prefixes(cursor,pointer);
+            @include prefixes(transition,transition(all,'duration-250',ease-in-out));
+            
+            &:hover{
+                background-color: $purple-200;
+            }
+
+            & > span{
+                margin-right: .5em;
+            }
+         }
+    }

@@ -1,0 +1,172 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as * ;
+@use '../abstracts/variables' as *;
+
+//<--Global Button Begin-->
+%btn{
+    border: 1px solid transparent;
+    font-size: fontSize('sm');
+    font-family: inherit;
+    padding: .5rem;
+    border-radius: $rounded-sm;
+    @include prefixes(cursor,pointer);
+
+    
+    &:focus{
+        outline: none;
+    }
+}
+
+//<--Global Button End-->
+
+//<--Submit Button Begin-->
+.btn--continue,
+.btn--submit{
+    @extend %btn;
+    color: #fff;
+    width: 100%;
+    margin:2em 0 1em;
+    background-color:$purple-600;
+    @include prefixes(transition,transition(all,'duration-250',ease-in-out));
+
+    &:hover{
+        color: $purple-600;
+        border-color: $purple-600;
+        background-color: transparent;
+    }
+}
+//<--Submit Button End-->
+
+//<--Dropdown Button Begin-->
+.btn--dropdown{
+    @extend %btn;
+    background-color: #fff;
+    padding: .75em;
+    width: 100%;
+    border-color: $purple-200;
+    @include prefixes(transition,transition(border-color,'duration-250',ease-in-out));
+
+    &:focus{
+        border-color:$purple-600;
+    }
+
+    &.btn--isChevron{
+       margin:2em 0 1em;
+       @include prefixes(display,flex);
+       @include prefixes(justify-content,space-between); 
+       @include prefixes(align-items,center);
+    }
+
+    &.btn--taskCard{
+        text-align: right;
+        font-size:fontSize('md');
+    }
+}
+//<--Dropdown Button End-->
+
+
+//<--Sidebar Button End-->
+.sidebar--btn{
+    @extend %btn;
+    background-color: #fff;
+    color: $purple-550;
+    border-radius: $rounded-md;
+    @include prefixes(box-shadow,boxShadow(shadow-md));
+    @include prefixes(transition,transition(transform,duration-250,ease-in-out));
+
+    &:hover{
+        @include prefixes(transform,scale(1.1));
+    }
+
+    &.active{
+        background-color: $purple-600;
+        color: #fff;
+    }
+
+    & > *{
+        vertical-align: middle;
+    }
+
+    &:nth-child(2){
+        margin: 2.5em 0;
+    }
+
+}
+//<--Sidebar Button End-->
+
+//<--Card First Section Buttons Begin-->
+.btn--accept,
+.btn--reject{
+    @extend %btn;
+    @include prefixes(transition,transition(all,duration-250,ease-in-out)); 
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.btn--accept{
+    background-color: $purple-600;
+    color: #fff;
+
+    &:hover{
+        background-color: #fff;
+        color: $purple-600;
+        border-color:$purple-600;
+    } 
+}
+
+
+.btn--reject{
+    background-color: #fff;
+    border-color: $purple-200;
+
+    &:hover{
+        background-color: $purple-600;
+        color: #fff;
+    }
+}
+//<--Card First Section Buttons End-->
+
+.btn--createTask{
+    @extend %btn;
+    color: #fff;
+    background-color: $purple-600;
+    border-radius: $rounded-xsm !important;
+    padding-left: 2em;
+    padding-right: 2em;
+    @include prefixes(transition,transition(all,duration-250,ease-in-out)); 
+
+    &:hover{
+        background-color: transparent;
+        border-color: $purple-600;
+        color: $purple-600;
+    }
+
+     & > svg{
+        vertical-align: middle;
+        margin-left: .5em;
+     }
+}
+//<--Card First Section Buttons End-->
+
+
+
+//<--Card Second Section Buttons Begin-->
+.btn--filter{
+    @extend %btn;
+    border-color: $purple-200;
+    background-color: #fff;
+    color: $purple-500;
+    @include prefixes(transition,transition(filter,duration-250,ease-in-out));
+
+    & > svg {
+        vertical-align: middle;
+        margin-left: .5em;
+    }
+
+    &:hover{
+        filter: opacity(0.7);
+    }
+
+}
+//<--Card Second Section Buttons End-->
+

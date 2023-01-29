@@ -1,0 +1,53 @@
+@use '../../abstracts/functions' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/variables' as *;
+@use '../../components/dropdown' as *;
+
+
+.message--wrapper{
+    height: calc(100% - 4.687em);
+    padding:4em 2em;
+
+    .bot--ul{
+            .bot{
+                &--img,
+                 &--msg {
+                    display:flex;
+                    @include prefixes(justify-content,flex-end);
+                    @include prefixes(align-items,center);
+                 }
+
+                 &--msg{
+                    position: relative;
+                    margin-right: auto;
+                    margin-left: 3em;
+                    padding: 1em;
+                    background-color:$purple-200;
+                    border-radius:0 $rounded-sm $rounded-sm $rounded-sm;
+                    width: fit-content;
+
+                     & > svg {
+                            cursor: pointer !important;
+                        }
+
+                        .dropdown--block{
+                            @extend %dropdown--block;
+                            left: 0;
+                            top: 60px;
+                        }
+                 }
+            }
+    }
+
+    //User
+    .sender{
+        &--msg{
+            margin-left: auto;
+            padding: 1em;
+            background-color:$purple-200;
+            border-radius: $rounded-sm 0 $rounded-sm $rounded-sm;
+            width: fit-content;
+        }
+    }
+
+}

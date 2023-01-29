@@ -1,0 +1,32 @@
+@use '../base/typography' as *;
+@use '../abstracts/variables' as *;
+
+//Font family handler
+@function fontFamily($name){
+    @if map-has-key($font-families, $name ){
+        @return map-get($font-families, $name);
+    }
+}
+
+//Font size handler
+@function fontSize($size){
+    @if map-has-key($font-sizes, $size){
+        @return map-get($font-sizes,$size);
+    }
+}
+
+//Transition
+@function transition($property,$duration,$easing){
+    @if map-has-key($durations, $duration){
+      @return $property map-get($durations,$duration) $easing;
+    }
+}
+
+//Box shadow
+@function boxShadow($shadow){
+    @if map-has-key($box-shadows, $shadow){
+        @return map-get($box-shadows, $shadow );
+    }@else {
+        @warn 'Unknonw #{$shadow} '
+    }
+}

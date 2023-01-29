@@ -1,0 +1,47 @@
+@use '../../abstracts/functions' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/variables' as *;
+@use '../../components/inputs' as *;
+
+.field--wrapper{
+    background-color: $purple-200;
+    padding: 1em 2em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    & > div{
+        position: relative;
+        label{
+            cursor: pointer;
+            top: 8px;
+            position: absolute;
+        }
+
+        label:nth-child(1){
+            left: 15px;
+        }
+
+        label:nth-child(2){
+            right: 15px;
+        }
+
+        .chatField{
+            @extend %input;
+            width: 100%;
+            border-radius: $rounded-half;
+            padding:.75em 3em;
+        }
+
+        &.warning{
+            .chatField{
+               border-color: $red-400;
+            }
+
+            .chatField::placeholder{
+                color: $red-400;
+            }
+        }
+    }
+}

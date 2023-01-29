@@ -1,0 +1,40 @@
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'mixins' as * ;
+@use '../components/cards' as *;
+
+
+#overlay{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    background-color:rgba(0,0,0,0.3);
+}
+
+.card{
+    @extend %card;
+
+    .cardH{
+        display: flex;
+        @include prefixes(justify-content,space-between);
+        @include prefixes(align-items,center);
+        margin-bottom: .5em;
+
+        .taskNum{
+            border-radius: $rounded-xsm;
+            padding:.1em .5em;
+            color: #fff;
+            background-color: $orange-600;
+        }
+    }
+}
+
+
+.line--seperator{
+    background-color: rgba(0,0,0,0.1);
+    height:1px;
+    width: 100%;
+}
