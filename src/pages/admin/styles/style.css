@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap");
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #E2E2E2;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1EA7FF;
+  border-radius: 20px;
+}
+
+.admin {
+  min-width: 100% !important;
+  margin-top: 1.5rem !important;
+  padding: 1em 6em !important;
+  gap: 4rem;
+  font-family: "Vazirmatn", sans-serif;
+}
+.admin .admin-container {
+  background-color: #FBFAFF;
+  border: 1px solid #E8EAFF;
+  border-radius: 1rem;
+}
+.admin .admin-container > div {
+  margin: 1rem 1rem;
+  padding: 1rem 0.6rem;
+}
+.admin .admin-container .filterbar {
+  display: flex;
+  justify-content: space-between;
+}
+.admin .admin-container .filterbar ul {
+  display: flex;
+  position: relative;
+  width: fit-content;
+}
+.admin .admin-container .filterbar ul li {
+  padding: 0 1rem;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+.admin .admin-container .filterbar ul .active:before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: #5051F9;
+  position: absolute;
+  bottom: -0.5rem;
+  right: 0;
+  border-radius: 10px;
+}
+.admin .admin-container .filterbar ul::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: #E2E2E2;
+  position: absolute;
+  bottom: -0.5rem;
+  border-radius: 5px;
+}
+.admin .admin-container .admin-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+.admin .admin-container .admin-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Vazirmatn", sans-serif;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.08);
+}
+.admin .admin-container .admin-card > div {
+  padding: 0.25rem 1rem 0.25rem 1rem;
+}
+.admin .admin-container .admin-card .box-icon {
+  padding: 0.5rem;
+}
+.admin .admin-container .admin-card .head-card {
+  background-color: #E97342;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.admin .admin-container .admin-card .body-card {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  row-gap: 0.75rem;
+}
+.admin .admin-container .admin-card .body-card .info {
+  display: flex;
+  align-items: center;
+}
+.admin .admin-container .admin-card .body-card .box-icon {
+  margin-left: 0.5rem;
+  background-color: #E8EAFF;
+  border-radius: 50%;
+}
+.admin .admin-container .admin-card .body-card .box-icon svg {
+  color: #5051F9;
+}
+.admin .admin-container .admin-card .body-card .info-desc {
+  font-weight: 500;
+}
+.admin .admin-container .admin-card .body-card .name {
+  grid-column: 1/-1;
+  grid-row: 1/6;
+}
+.admin .admin-container .admin-card .body-card .project {
+  grid-column: 1/6;
+  grid-row: 6/12;
+}
+.admin .admin-container .admin-card .body-card .city {
+  grid-column: 6/12;
+  grid-row: 6/12;
+}
+.admin .admin-container .admin-card hr {
+  border: 1px solid #F3F3F3;
+  margin: 0 1rem;
+}
+.admin .admin-container .admin-card .footer-card {
+  display: flex;
+  justify-content: end;
+}
+.admin .admin-container .admin-card .footer-card > a {
+  padding: 1rem 0.5rem 1rem 0;
+  display: inline-block;
+  color: #5051F9;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(55, 55, 55, 0.368627451);
+  position: fixed;
+  top: 0;
+  z-index: 1001;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(218, 248, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+/* --------------------- style select rahbar modal start------------------- */
+.edit-modal {
+  width: 500px;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.edit-modal > div {
+  padding: 0.5rem 1rem;
+}
+.edit-modal .box-icon {
+  padding: 0.5rem;
+}
+.edit-modal .head-modal {
+  background-color: #E97342;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.edit-modal .user-info {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 300;
+}
+.edit-modal .user-info .box-icon {
+  margin-left: 0.5rem;
+  background-color: #E8EAFF;
+  border-radius: 50%;
+}
+.edit-modal .user-info .box-icon svg {
+  color: #5051F9;
+}
+.edit-modal .user-info span {
+  font-size: 14px;
+  font-weight: 500;
+}
+.edit-modal .select-wrapper {
+  display: grid;
+  row-gap: 1rem;
+}
+.edit-modal .select-wrapper .select {
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #E5E5ED;
+  border-radius: 9px;
+  margin: 0.25rem 0;
+}
+.edit-modal .btns {
+  display: flex;
+  justify-content: flex-end;
+}
+.edit-modal .btns a {
+  margin: 0.5rem 2rem 0.5rem 0;
+  color: #5051F9;
+  cursor: pointer;
+}
+
+/* --------------------- style select rahbar modal end------------------- */
+/* --------------------- style select rahbar modal start------------------- */
+.modal-select-rahbar {
+  background-color: #fff;
+  width: 450px;
+  border-radius: 12px;
+  margin: 0 1rem;
+}
+.modal-select-rahbar > div {
+  padding: 0.5rem 1rem;
+}
+.modal-select-rahbar .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-select-rahbar .head .box-icon svg {
+  width: 32px;
+  height: 32px;
+}
+.modal-select-rahbar .body {
+  height: 400px;
+  overflow-y: scroll;
+  margin-left: 1rem;
+  scrollbar-color: #1EA7FF #E2E2E2;
+  scrollbar-width: thin;
+}
+.modal-select-rahbar .body .rahbar {
+  display: flex;
+  align-items: center;
+  margin: 0 0 2rem 0;
+}
+.modal-select-rahbar .body .rahbar > div {
+  margin: 0 0 0 0.5rem;
+}
+.modal-select-rahbar .body .rahbar .box-icon {
+  cursor: pointer;
+}
+.modal-select-rahbar .body .rahbar .box-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.modal-select-rahbar .footer {
+  display: flex;
+  justify-content: flex-end;
+}
+.modal-select-rahbar .footer button {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-family: "Vazirmatn", sans-serif;
+  border-radius: 0.5rem;
+  background-color: #5051F9;
+  color: #fff;
+}
+
+/* --------------------- style select rahbar modal end------------------- */
+
+/*# sourceMappingURL=style.css.map */

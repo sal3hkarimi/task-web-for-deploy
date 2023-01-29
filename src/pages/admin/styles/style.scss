@@ -1,0 +1,351 @@
+@use '../../../assets/styles/abstracts/variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$fff : #fff;
+$head-color: #E97342;
+$scroll-color: #1EA7FF;
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: $gray-200;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $scroll-color;
+    border-radius: 20px;
+}
+
+.admin {
+    min-width: 100% !important;
+    margin-top: 1.5rem !important;
+    padding: 1em 6em !important;
+    gap: 4rem;
+    font-family: 'Vazirmatn', sans-serif;
+
+    .admin-container {
+        background-color: $purple-100;
+        border: 1px solid $purple-200;
+        border-radius: 1rem;
+
+
+        &>div {
+            margin: 1rem 1rem;
+            padding: 1rem 0.6rem;
+        }
+
+        .filterbar {
+            // background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+
+            ul {
+                display: flex;
+                position: relative;
+                width: fit-content;
+
+                li {
+                    padding: 0 1rem;
+                    position: relative;
+                    cursor: pointer;
+                    user-select: none;
+                }
+
+                .active:before {
+                    content: '';
+                    width: 100%;
+                    height: 4px;
+                    background-color: $purple-600;
+                    position: absolute;
+                    bottom: -.5rem;
+                    right: 0;
+                    border-radius: 10px;
+                }
+
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 4px;
+                    background-color: $gray-200;
+                    position: absolute;
+                    bottom: -.5rem;
+                    border-radius: 5px;
+                }
+            }
+
+        }
+
+        .admin-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: .5rem;
+            justify-content: space-between;
+        }
+
+        .admin-card {
+            background-color: $fff;
+            border-radius: 8px;
+            overflow: hidden;
+            font-family: 'Vazirmatn', sans-serif;
+            box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.08);
+
+
+            &>div {
+                padding: .25rem 1rem .25rem 1rem;
+
+            }
+
+            .box-icon {
+                padding: .5rem;
+            }
+
+            .head-card {
+                background-color: $head-color;
+                display: flex;
+                align-items: center;
+                color: $fff;
+            }
+
+            .body-card {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: repeat(12, 1fr);
+                row-gap: .75rem;
+
+                .info {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .box-icon {
+                    margin-left: .5rem;
+                    background-color: $purple-200;
+                    border-radius: 50%;
+
+                    svg {
+                        color: $purple-600;
+                    }
+                }
+
+                .info-desc {
+                    font-weight: 500;
+                }
+
+                .name {
+                    grid-column: 1/-1;
+                    grid-row: 1/6;
+                }
+
+                .project {
+                    grid-column: 1/6;
+                    grid-row: 6/12;
+                }
+
+                .city {
+                    grid-column: 6/12;
+                    grid-row: 6/12;
+                }
+            }
+
+            hr {
+                border: 1px solid #F3F3F3;
+                margin: 0 1rem;
+            }
+
+            .footer-card {
+                display: flex;
+                justify-content: end;
+
+                &>a {
+                    padding: 1rem .5rem 1rem 0;
+                    display: inline-block;
+                    color: $purple-600;
+                    font-size: .9rem;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        
+    }
+}
+
+.bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: #3737375e;
+    position: fixed;
+    top: 0;
+    z-index: 1001;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(218, 248, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Vazirmatn', sans-serif;
+
+}
+
+
+/* --------------------- style select rahbar modal start------------------- */
+.edit-modal {
+    width: 500px;
+    background-color: $fff;
+    border-radius: .5rem;
+    overflow: hidden;
+
+    &>div {
+        padding: .5rem 1rem;
+    }
+
+    .box-icon {
+        padding: .5rem;
+
+    }
+
+    .head-modal {
+        background-color: $head-color;
+        color: $fff;
+        display: flex;
+        align-items: center;
+    }
+
+    .user-info {
+        .box-icon {
+            margin-left: .5rem;
+            background-color: $purple-200;
+            border-radius: 50%;
+
+            svg {
+                color: $purple-600;
+            }
+        }
+
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 300;
+
+        span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    .select-wrapper {
+        display: grid;
+        row-gap: 1rem;
+
+        .select {
+            width: 100%;
+            padding: .5rem;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #E5E5ED;
+            border-radius: 9px;
+            margin: .25rem 0;
+        }
+    }
+
+    .btns {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+            margin: .5rem 2rem .5rem 0;
+            color: $purple-600;
+            cursor: pointer;
+        }
+    }
+
+}
+
+/* --------------------- style select rahbar modal end------------------- */
+
+/* --------------------- style select rahbar modal start------------------- */
+.modal-select-rahbar {
+    background-color: $fff;
+    width: 450px;
+    border-radius: 12px;
+    margin: 0 1rem;
+
+    &>div {
+        padding: .5rem 1rem;
+    }
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .box-icon {
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
+    .body {
+        height: 400px;
+        overflow-y: scroll;
+        margin-left: 1rem;
+        scrollbar-color: $scroll-color $gray-200;
+        scrollbar-width: thin;
+
+
+
+
+        .rahbar {
+            display: flex;
+            align-items: center;
+            margin: 0 0 2rem 0;
+
+            &>div {
+                margin: 0 0 0 .5rem;
+            }
+
+            .box-icon {
+                cursor: pointer;
+            }
+
+            .box-img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+        }
+    }
+
+    .footer {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            border: none;
+            outline: none;
+            padding: .5rem 1rem;
+            font-size: 1rem;
+            font-family: 'Vazirmatn', sans-serif;
+            border-radius: .5rem;
+            background-color: $purple-600;
+            color: $fff;
+        }
+    }
+}
+
+/* --------------------- style select rahbar modal end------------------- */
